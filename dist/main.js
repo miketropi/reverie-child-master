@@ -1,13 +1,53 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./nav */ "./src/nav.js");
 
 
+(function (w, $) {
+  'use strict';
+
+  var ready = function ready() {
+    (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  };
+  /**
+   * DOM Ready
+   */
+
+
+  $(ready);
+})(window, jQuery);
+
+/***/ }),
+
+/***/ "./src/nav.js":
+/*!********************!*\
+  !*** ./src/nav.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
+  var $nav = jQuery('ul.site-main-menu');
+  var arrowSVG = "<svg width=\"8\" height=\"7\" viewBox=\"0 0 8 7\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> <path d=\"M0.611328 0.0117302L0.611328 3.46627L4.12447 7L7.61133 3.4956L7.61133 0L4.10695 3.51906L0.611328 0.0117302Z\" fill=\"#E4752E\"/> </svg>";
+
+  var appendArrowHasSub = function appendArrowHasSub() {
+    $nav.find('li.menu-item-has-children > a').append("<span class=\"__arrow-nav-item\">".concat(arrowSVG, "</span>"));
+  };
+
+  appendArrowHasSub();
+});
 
 /***/ }),
 
@@ -17,7 +57,6 @@
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -83,6 +122,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	

@@ -1,0 +1,61 @@
+#SiteHeader {
+
+}
+
+.header-classic{
+  background-color: white;
+  box-shadow: none;
+  position: relative;
+  z-index: 50;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 12px 0;
+
+    .site-brand {
+
+    }
+
+    .site-nav {
+      margin-left: auto;
+
+      .main-menu {
+        border-top: none;
+      }
+    }
+
+    .site-extra {
+      margin-left: 68px;
+    }
+  }
+}
+
+.header-tool {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__item {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-right: 45px;
+    }
+
+    > a {
+      display: flex;
+      align-items: center;
+      color: var(--main-menu-color);
+      font-size: var(--main-menu-size);
+      font-family: var(--content-font);
+
+      .__icon {
+        margin-left: 10px; 
+      }
+    }
+  }
+}

@@ -12,3 +12,5 @@ $ npm run dev
 # Build 
 $ npm run build
 ```
+
+Javascript & SCSS working on folder `src`

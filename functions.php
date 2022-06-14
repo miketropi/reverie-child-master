@@ -1,4 +1,41 @@
 <?php
+/**
+ * Functions 
+ */
+
+{
+    /**
+     * Define 
+     */
+    define('CCS_THEME_VER', '1.0.0');
+    define('CCS_THEME_URI', get_stylesheet_directory_uri());
+    define('CCS_THEME_DIR', get_stylesheet_directory());
+}
+
+{
+    /**
+     * Inc
+     */
+    require(CCS_THEME_DIR . '/inc/static.php');
+    require(CCS_THEME_DIR . '/inc/helpers.php');
+    require(CCS_THEME_DIR . '/inc/ajax.php');
+    require(CCS_THEME_DIR . '/inc/hooks.php');
+}
+
+function ccs_boot() {
+    $defaults = array(
+        'height'               => 100,
+        'width'                => 400,
+        'flex-height'          => true,
+        'flex-width'           => true,
+        'header-text'          => ['Right Choice Coatings & Sealers', '...'],
+        'unlink-homepage-logo' => true, 
+    );
+
+    add_theme_support( 'custom-logo', $defaults );
+}
+
+add_action('after_setup_theme', 'ccs_boot');
 
 function my_deregister_scripts() {
     wp_dequeue_script('wp-embed');

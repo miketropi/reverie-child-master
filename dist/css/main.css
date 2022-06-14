@@ -1,1 +1,126 @@
+:root {
+  --site-width: 1288px;
+  --main-menu-size: 14px;
+  --main-menu-color: black;
+  --active-color: #36948f;
+  --heading-font: "Oswald", sans-serif;
+  --content-font: "Roboto", sans-serif;
+}
 
+.site-container {
+  width: var(--site-width);
+  max-width: calc(100% - 30px);
+  margin: 0 auto;
+}
+
+.header-classic {
+  background-color: white;
+  box-shadow: none;
+  position: relative;
+  z-index: 50;
+}
+.header-classic__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 12px 0;
+}
+.header-classic__inner .site-nav {
+  margin-left: auto;
+}
+.header-classic__inner .site-nav .main-menu {
+  border-top: none;
+}
+.header-classic__inner .site-extra {
+  margin-left: 68px;
+}
+
+.header-tool {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.header-tool__item {
+  list-style: none;
+}
+.header-tool__item:not(:last-child) {
+  margin-right: 45px;
+}
+.header-tool__item > a {
+  display: flex;
+  align-items: center;
+  color: var(--main-menu-color);
+  font-size: var(--main-menu-size);
+  font-family: var(--content-font);
+}
+.header-tool__item > a .__icon {
+  margin-left: 10px;
+}
+
+ul.site-main-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+ul.site-main-menu li.menu-item > a {
+  color: var(--main-menu-color);
+  font-size: var(--main-menu-size);
+  font-family: var(--content-font);
+}
+ul.site-main-menu > li.menu-item {
+  list-style: none;
+}
+ul.site-main-menu > li.menu-item > a {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+ul.site-main-menu > li.menu-item > a .__arrow-nav-item {
+  margin-left: 6px;
+}
+ul.site-main-menu > li.menu-item.current-menu-item > a, ul.site-main-menu > li.menu-item:hover > a {
+  color: var(--active-color);
+}
+ul.site-main-menu li.menu-item-has-children {
+  position: relative;
+}
+ul.site-main-menu li.menu-item-has-children:hover ul.sub-menu {
+  visibility: visible;
+  opacity: 1;
+}
+ul.site-main-menu ul.sub-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+  border: solid 1px #eee;
+  box-shadow: 0 0 3px 0 rgba(1, 1, 1, 0.1);
+  padding: 0;
+  margin: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+}
+ul.site-main-menu ul.sub-menu li.menu-item {
+  list-style: none;
+  min-width: 180px;
+}
+ul.site-main-menu ul.sub-menu li.menu-item:not(:last-child) {
+  border-bottom: solid 1px #eee;
+}
+ul.site-main-menu ul.sub-menu li.menu-item > a {
+  display: block;
+  padding: 14px 20px;
+  background-color: white;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+}
+ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-menu ul.sub-menu li.menu-item:hover > a {
+  background-color: var(--active-color);
+  color: white;
+}
