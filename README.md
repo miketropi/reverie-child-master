@@ -1,8 +1,14 @@
-Reverie Child Theme Package
-=============
+## Custom theme for Concretecoatingsealers Project
 
-A child theme package for Reverie.
+#### Setup
+```console 
+$ git clone https://github.com/miketropi/reverie-child-master
+$ cd reverie-child-master
+$ npm install 
 
-Learn about how to set up a child theme for Reverie.
+# Dev 
+$ npm run dev
 
-[http://themefortress.com/reverie-child-theme-github/](http://themefortress.com/reverie-child-theme-github/)
+# Build 
+$ npm run build
+```
