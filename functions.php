@@ -20,6 +20,7 @@
     require(CCS_THEME_DIR . '/inc/helpers.php');
     require(CCS_THEME_DIR . '/inc/ajax.php');
     require(CCS_THEME_DIR . '/inc/hooks.php');
+    require(CCS_THEME_DIR . '/inc/options.php');
 }
 
 function ccs_boot() {

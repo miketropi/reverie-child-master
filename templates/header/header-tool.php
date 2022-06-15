@@ -11,21 +11,24 @@ $tools = apply_filters('site-header-tools', [
   ],
   'search' => [
     'icon' => ccs_icon('search'),
-    'link' => '/#',
+    'link' => get_search_link(),
   ],
   'mini-cart' => [
-    'icon' => ccs_icon('cart'),
-    'link' => '/#',
+    'icon' => ccs_icon('cart') . ccs_icon('cart-mobi'),
+    'link' => (function_exists('wc_get_cart_url')) ? wc_get_cart_url() : '/#',
   ]
 ]);
 ?>
 <ul class="header-tool">
-  <?php foreach($tools as $t) { ?>
-  <li class="header-tool__item">
+  <?php foreach($tools as $k => $t) { ?>
+  <li class="header-tool__item __<?php echo $k ?>">
     <a href="<?php echo $t['link'] ?>">
       <?php echo isset($t['title']) ? $t['title'] : '' ?>
       <span class="__icon"><?php echo $t['icon'] ?></span>
     </a>
   </li>
   <?php } ?>
+  <li class="header-tool__item __mobi-toggle-button">
+    <span class="__icon"><?php echo ccs_icon('hamburger'); ?></span>
+  </li>
 </ul>

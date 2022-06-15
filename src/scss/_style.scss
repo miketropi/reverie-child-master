@@ -3,3 +3,13 @@
   max-width: calc(100% - 30px);
   margin: 0 auto;
 }
+
+/**
+ * Fix top space header on mobile
+ */
+@media(max-width: 600px) {
+
+  #wpadminbar {
+    position: fixed;
+  }
+}
