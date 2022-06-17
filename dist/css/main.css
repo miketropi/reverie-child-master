@@ -373,3 +373,83 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
     -webkit-transform: translateX(0);
   }
 }
+/**
+* Styling Product category
+*/
+.tax-product_cat {
+  background-color: #e5e5e5;
+  overflow-x: hidden;
+}
+@media (min-width: 1400px) {
+  .tax-product_cat .container .row,
+.tax-product_cat #main {
+    max-width: 1300px;
+  }
+}
+@media (max-width: 767px) {
+  .tax-product_cat {
+    background-color: #fff;
+  }
+}
+.tax-product_cat .cta-section {
+  width: 100vw;
+  margin-left: calc((100% - 100vw) / 2);
+}
+
+@media (max-width: 767px) {
+  .wrapper-cat-product .e-product-cate-menu__inner {
+    display: none;
+  }
+}
+.wrapper-cat-product-inner .rows {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.wrapper-cat-product-inner .rows .csscols {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 768px) {
+  .wrapper-cat-product-inner .rows .csscols.cols-md-3 {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+}
+@media (min-width: 768px) {
+  .wrapper-cat-product-inner .rows .csscols.cols-md-9 {
+    flex: 0 0 70%;
+    max-width: 70%;
+  }
+}
+.wrapper-cat-product-inner .rows .csscols .title-cat-heading {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #68767b;
+  font-family: var(--content-font);
+  position: relative;
+  padding-bottom: 13px;
+  margin-bottom: 80px;
+}
+.wrapper-cat-product-inner .rows .csscols .title-cat-heading::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAckAAAAECAYAAADlPsSvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACBSURBVHgB7dXBDURQFIXhe2Nk2pnNLGY5JehABVpABRKNKEQk2hHh8gRhR2L18n/bc/a/ykHS1KnYmAkAAB5Q0VaD8G9DX5hYfOtrY/7aRgIJAPCJi17XD9Fb5FIgT985kOX3l6kbCSQAwCd79MKgmqP3ufVdA7lsBBIA4JOnAulM8o5amIqRN48AAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}

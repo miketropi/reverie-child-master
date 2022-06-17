@@ -1,0 +1,92 @@
+/**
+* Styling Product category
+*/
+
+.tax-product_cat {
+	background-color: #e5e5e5;
+	overflow-x: hidden;
+	@media (min-width: 1400px) {
+		.container .row,
+		#main {
+			max-width: 1300px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		background-color: #fff;
+	}
+	.cta-section{
+		width: 100vw;
+		margin-left: calc((100% - 100vw) / 2);
+	}
+}
+.wrapper-cat-product {
+	.e-product-cate-menu__inner {
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+	&-inner {
+		.rows {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			margin-right: -15px;
+			margin-left: -15px;
+			.csscols {
+				position: relative;
+				width: 100%;
+				min-height: 1px;
+				padding-right: 15px;
+				padding-left: 15px;
+				&.cols-md-3 {
+					@media (min-width: 768px) {
+						-webkit-box-flex: 0;
+						-ms-flex: 0 0 30%;
+						flex: 0 0 30%;
+						max-width: 30%;
+					}
+				}
+				&.cols-md-9 {
+					@media (min-width: 768px) {
+						-webkit-box-flex: 0;
+						-ms-flex: 0 0 70%;
+						flex: 0 0 70%;
+						max-width: 70%;
+					}
+				}
+				.title-cat-heading {
+					font-style: normal;
+					font-weight: 500;
+					font-size: 32px;
+					line-height: 38px;
+					text-align: center;
+					text-transform: uppercase;
+					color: #68767b;
+					font-family: var(--content-font);
+					position: relative;
+					padding-bottom: 13px;
+					margin-bottom: 80px;
+					&::before {
+						content: "";
+						display: inline-block;
+						position: absolute;
+						bottom: 0;
+						height: 4px;
+						width: 55%;
+						left: 50%;
+						transform: translateX(-50%);
+						background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAckAAAAECAYAAADlPsSvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACBSURBVHgB7dXBDURQFIXhe2Nk2pnNLGY5JehABVpABRKNKEQk2hHh8gRhR2L18n/bc/a/ykHS1KnYmAkAAB5Q0VaD8G9DX5hYfOtrY/7aRgIJAPCJi17XD9Fb5FIgT985kOX3l6kbCSQAwCd79MKgmqP3ufVdA7lsBBIA4JOnAulM8o5amIqRN48AAAAASUVORK5CYII=);
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: 100% 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+
