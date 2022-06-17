@@ -19,6 +19,9 @@
 		width: 100vw;
 		margin-left: calc((100% - 100vw) / 2);
 	}
+	#main {
+		padding: 0 10px 70px 10px;
+	}
 }
 .wrapper-cat-product {
 	.e-product-cate-menu__inner {
@@ -69,6 +72,7 @@
 					position: relative;
 					padding-bottom: 13px;
 					margin-bottom: 80px;
+					margin-top: 70px;
 					&::before {
 						content: "";
 						display: inline-block;

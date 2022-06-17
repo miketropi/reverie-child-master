@@ -166,7 +166,7 @@ body .css-wrapper-prod-cat-inner .list-prod-cat .prod-cat-item h6 {
 body .css-wrapper-prod-cat-inner .list-prod-cat .prod-cat-item h6 a {
   color: inherit;
 }
-body:not(.home) .css-wrapper-prod-cat {
+body:not(.home):not(.tax-product_cat) .css-wrapper-prod-cat {
   display: none;
 }
 
@@ -395,6 +395,9 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
   width: 100vw;
   margin-left: calc((100% - 100vw) / 2);
 }
+.tax-product_cat #main {
+  padding: 0 10px 70px 10px;
+}
 
 @media (max-width: 767px) {
   .wrapper-cat-product .e-product-cate-menu__inner {
@@ -438,6 +441,7 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
   position: relative;
   padding-bottom: 13px;
   margin-bottom: 80px;
+  margin-top: 70px;
 }
 .wrapper-cat-product-inner .rows .csscols .title-cat-heading::before {
   content: "";

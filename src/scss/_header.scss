@@ -167,7 +167,7 @@ body {
             }
         }
     }
-    &:not(.home) {
+    &:not(.home):not(.tax-product_cat){
         .css-wrapper-prod-cat {
             display: none;
         }
