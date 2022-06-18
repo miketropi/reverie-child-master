@@ -17,18 +17,6 @@ __webpack_require__.r(__webpack_exports__);
 
   var ready = function ready() {
     (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])();
-    $(document).on("click", ".input-spin-button.outer-spin-button", function () {
-      var $this = $(this);
-      var inputVal = $this.parent().find('input').val();
-      var newVal = parseInt(inputVal) + 1;
-      $this.parent().find("input").val(newVal);
-    });
-    $(document).on("click", ".input-spin-button.inner-spin-button", function () {
-      var $this = $(this);
-      var inputVal = $this.parent().find('input').val();
-      var newVal = parseInt(inputVal) - 1;
-      $this.parent().find("input").val(newVal);
-    });
   };
   /**
    * DOM Ready
@@ -201,8 +189,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/main": 0,
-/******/ 			"css/main": 0
+/******/ 			"/helpers-for-project.bundle": 0,
+/******/ 			"css/helpers-for-project.bundle": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -252,9 +240,10 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/main"], () => (__webpack_require__("./src/main.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/main"], () => (__webpack_require__("./src/scss/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/helpers-for-project.bundle"], () => (__webpack_require__("./src/main.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/helpers-for-project.bundle"], () => (__webpack_require__("./src/scss/main.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
+//# sourceMappingURL=helpers-for-project.bundle.js.map
