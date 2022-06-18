@@ -171,12 +171,33 @@
 			}
 			.single_variation_wrap {
 				clear: none;
+				display: flex;
+				flex-direction: column;
+
 				@media (max-width: 767px) {
 					display: flex;
 					justify-content: center;
 					clear: both;
 					float: none;
 					flex-direction: unset;
+				}
+				.woocommerce-variation.single_variation {
+					order: 1;
+					.woocommerce-variation-price {
+						.price {
+							margin-bottom: 0;
+							font-style: normal;
+							font-weight: 700;
+							font-size: 45px;
+							letter-spacing: -0.02em;
+							text-transform: uppercase;
+							color: #019490;
+							font-family: var(--heading-font);
+						}
+					}
+				}
+				.woocommerce-variation-add-to-cart {
+					order: 3;
 				}
 				.single_add_to_cart_button {
 					height: 75px;
