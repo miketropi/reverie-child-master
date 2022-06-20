@@ -15,8 +15,23 @@ __webpack_require__.r(__webpack_exports__);
 (function (w, $) {
   'use strict';
 
+  var fixPriceWholesaleSingleProduct = function fixPriceWholesaleSingleProduct() {
+    var currentPrice = '';
+    $('.variations_form').on('found_variation', function (e, variation) {
+      // console.log('---', variation, variation['price_html']);
+      currentPrice = variation['price_html'];
+    });
+    $(document).ajaxComplete(function (event, xhr, settings) {
+      // console.log([event, xhr, settings])
+      if (settings.data.search('action=get_price_product_with_bulk_table') != -1) {
+        $('.woocommerce-variation .woocommerce-variation-price').html(currentPrice);
+      }
+    });
+  };
+
   var ready = function ready() {
     (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    fixPriceWholesaleSingleProduct();
     $(document).on("click", ".input-spin-button.outer-spin-button", function () {
       var $this = $(this);
       var inputVal = $this.parent().find('input').val();
