@@ -22,6 +22,10 @@
     require(CCS_THEME_DIR . '/inc/hooks.php');
     require(CCS_THEME_DIR . '/inc/options.php');
     require(CCS_THEME_DIR . '/inc/acf-options.php');
+
+    if(class_exists('WooCommerce')) {
+        require(CCS_THEME_DIR . '/inc/woo-helpers.php');
+    }
 }
 
 function ccs_boot() {
