@@ -83,7 +83,12 @@
             }
             .dgwt-wcas-search-form{
                 .dgwt-wcas-sf-wrapp{
-                    svg{
+                    padding-top: 0;
+                    *{
+                        padding-top: 0;
+                    }
+                    
+                    >svg{
                         display: none;
                     }
                 }
