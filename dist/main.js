@@ -43,6 +43,7 @@ __webpack_require__.r(__webpack_exports__);
     $(document).on("click", ".input-spin-button.inner-spin-button", function () {
       var $this = $(this);
       var inputVal = $this.parent().find('input').val();
+      if (parseInt(inputVal) == 1) return;
       var newVal = parseInt(inputVal) - 1;
       $this.parent().find("input").val(newVal);
     });

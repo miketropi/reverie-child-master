@@ -63,7 +63,10 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
 		do_action( 'woocommerce_sidebar' );
+		echo '<div class="cta-section">' . do_shortcode('[INSERT_ELEMENTOR id="28323"]') . '</div>';
 	?>
+
+	
 
 <?php get_footer( 'shop' );
 

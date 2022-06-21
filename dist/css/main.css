@@ -476,6 +476,11 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
 */
 .single-product.woocommerce {
   background-color: #e5e5e5;
+  overflow-x: hidden;
+}
+.single-product.woocommerce .cta-section {
+  width: 100vw;
+  margin-left: calc((100% - 100vw) / 2);
 }
 .single-product.woocommerce #main {
   padding: 80px 15px 70px;
@@ -620,6 +625,7 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
   .single-product.woocommerce .type-product .entry-summary .quote-btn {
     display: flex;
     justify-content: center;
+    margin-top: 0px;
   }
 }
 .single-product.woocommerce .type-product .entry-summary .quote-btn .btn {
@@ -629,6 +635,11 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
 @media (max-width: 991px) {
   .single-product.woocommerce .type-product .entry-summary .quote-btn .btn {
     margin-top: 0;
+  }
+}
+@media (max-width: 991px) {
+  .single-product.woocommerce .type-product .entry-summary .quote-btn .btn {
+    width: auto;
   }
 }
 .single-product.woocommerce .type-product .entry-summary .quote-btn .btn .single_add_to_cart_button.button {
@@ -656,6 +667,12 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
   float: none;
   margin-bottom: 0;
 }
+@media (max-width: 767px) {
+  .single-product.woocommerce .type-product .entry-summary form.cart {
+    flex-direction: column;
+    display: flex;
+  }
+}
 .single-product.woocommerce .type-product .entry-summary .single_variation_wrap {
   clear: both;
   display: flex;
@@ -667,7 +684,10 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
     justify-content: center;
     clear: both;
     float: none;
-    flex-direction: unset;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+    margin-bottom: 80px;
   }
 }
 .single-product.woocommerce .type-product .entry-summary .single_variation_wrap .woocommerce-variation.single_variation {
@@ -721,6 +741,8 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
 @media (max-width: 767px) {
   .single-product.woocommerce .type-product .entry-summary .wdp_pricing_table_caption {
     margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 18.75px;
   }
 }
 .single-product.woocommerce .type-product .entry-summary .wdp_bulk_table_content {
@@ -737,6 +759,7 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
 @media (max-width: 767px) {
   .single-product.woocommerce .type-product .entry-summary .wdp_bulk_table_content {
     text-align: center;
+    order: 3;
   }
 }
 .single-product.woocommerce .type-product .entry-summary .wdp_bulk_table_content .wdp_pricing_table {
@@ -799,6 +822,7 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
   .single-product.woocommerce .type-product .entry-summary .wrapper-variations {
     display: flex;
     justify-content: center;
+    order: 1;
   }
 }
 .single-product.woocommerce .type-product .entry-summary .quantity {

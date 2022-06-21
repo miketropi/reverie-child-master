@@ -36,7 +36,9 @@ import Nav from './nav';
     $(document).on("click", ".input-spin-button.inner-spin-button", function () {
       let $this = $(this);
       let inputVal = $this.parent().find('input').val()
+      if(parseInt(inputVal) == 1) return
       let newVal = parseInt(inputVal) - 1
+      
       $this.parent().find("input").val(newVal);
     });
   }
