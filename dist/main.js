@@ -23,7 +23,9 @@ __webpack_require__.r(__webpack_exports__);
     });
     $(document).ajaxComplete(function (event, xhr, settings) {
       // console.log([event, xhr, settings])
-      if (settings.data.search('action=get_price_product_with_bulk_table') && settings.data.search('action=get_price_product_with_bulk_table') != -1) {
+      if (!settings.data.search) return;
+
+      if (settings.data.search('action=get_price_product_with_bulk_table') != -1) {
         $('.woocommerce-variation .woocommerce-variation-price').html(currentPrice);
       }
     });
