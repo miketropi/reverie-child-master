@@ -481,6 +481,7 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
 .single-product.woocommerce .cta-section {
   width: 100vw;
   margin-left: calc((100% - 100vw) / 2);
+  clear: both;
 }
 .single-product.woocommerce #main {
   padding: 80px 15px 70px;
