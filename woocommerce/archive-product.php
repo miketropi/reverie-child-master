@@ -83,7 +83,7 @@ do_action('woocommerce_before_main_content');
 					if (!empty($product_categories)) {
 					?>
 						<div class="e-product-cate-menu__inner">
-							<h4 class="hfp-widget__title">Products</h4>
+							<h4 class="hfp-widget__title">Categories</h4>
 							<ul class="p-term-list">
 								<?php if ($product_categories && count($product_categories) > 0) {
 									foreach ($product_categories as $key => $category) {
@@ -133,10 +133,12 @@ do_action('woocommerce_before_main_content');
 						$p_image = (($product_thumbnail && isset($product_thumbnail[0])) ? $product_thumbnail[0] : wc_placeholder_img_src());
 					?>
 						<div class="e-products-grid__item">
-							<img src="<?php echo $p_image; ?>" alt="<?php echo $product_thumbnail_alt; ?>">
+							<a class="thumb-prod" href="<?php the_permalink() ?>">
+								<img src="<?php echo $p_image; ?>" alt="<?php echo $product_thumbnail_alt; ?>">
+							</a>
 							<h2 class="woocommerce-loop-product__title">
 								<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-							</h2>							
+							</h2>
 							<div class="prod-star-rating">
 								<span class="prod-star prod-star-df"></span>
 								<span class="prod-star prod-star-active" style="width:<?= (($average / 5) * 100) ?>%"><span></span></span>
@@ -168,7 +170,7 @@ do_action('woocommerce_before_main_content');
 		</div>
 	</div>
 	<?php
-	
+
 	/* Category - SubCategory END */
 
 	/**
@@ -202,7 +204,7 @@ do_action('woocommerce_after_main_content');
  */
 do_action('woocommerce_sidebar');
 
-echo '<div class="cta-section">'.do_shortcode('[INSERT_ELEMENTOR id="28323"]').'</div>';
+echo '<div class="cta-section">' . do_shortcode('[INSERT_ELEMENTOR id="28323"]') . '</div>';
 ?>
 
 <?php get_footer('shop'); ?>
