@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Header tools 
  */
@@ -7,11 +8,11 @@ $tools = apply_filters('site-header-tools', [
   'help' => [
     'title' => __('Help', 'ccs'),
     'icon' => ccs_icon('help'),
-    'link' => '/#',
+    'link' => '/contact-us/',
   ],
   'search' => [
     'icon' => ccs_icon('search'),
-    'link' => get_search_link(),
+    'link' => '[fibosearch layout="icon"]',
   ],
   'mini-cart' => [
     'icon' => ccs_icon('cart') . ccs_icon('cart-mobi'),
@@ -20,14 +21,21 @@ $tools = apply_filters('site-header-tools', [
 ]);
 ?>
 <ul class="header-tool">
-  <?php foreach($tools as $k => $t) { ?>
-  <li class="header-tool__item __<?php echo $k ?>">
-    <a href="<?php echo $t['link'] ?>">
-      <?php echo isset($t['title']) ? $t['title'] : '' ?>
-      <span class="__icon"><?php echo $t['icon'] ?></span>
-    </a>
-  </li>
-  <?php } ?>
+  <?php foreach ($tools as $k => $t) {
+    if ($k == 'search') {
+      echo '<li class="header-tool__item __'.$k.'">'.do_shortcode($t['link']).'</li>';
+    } else {
+  ?>
+      <li class="header-tool__item __<?php echo $k ?>">
+        <a href="<?php echo $t['link'] ?>">
+          <?php echo isset($t['title']) ? $t['title'] : '' ?>
+          <span class="__icon"><?php echo $t['icon'] ?></span>
+        </a>
+      </li>
+  <?php
+    }
+  }
+  ?>
   <li class="header-tool__item __mobi-toggle-button">
     <span class="__icon"><?php echo ccs_icon('hamburger'); ?></span>
   </li>

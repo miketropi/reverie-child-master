@@ -73,7 +73,25 @@
                 margin-left: 10px;
             }
         }
-
+        &.__search{
+            .dgwt-wcas-search-icon{
+                padding-top: 0;
+                width: 37px;
+                svg{
+                    padding-top: 0;
+                }
+            }
+            .dgwt-wcas-search-form{
+                .dgwt-wcas-sf-wrapp{
+                    svg{
+                        display: none;
+                    }
+                }
+            }
+            .dgwt-wcas-search-icon-arrow{
+                display: none !important;
+            }
+        }
         &.__mini-cart {
             .__icon {
                 .cart-mobi {
