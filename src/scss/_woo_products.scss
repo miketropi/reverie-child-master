@@ -452,8 +452,14 @@
 				}
 			}
 		}
-		.woocommerce-tabs ul.tabs {
-			background: transparent;
-		}
+		.woocommerce-tabs{
+			@media (max-width: 767px) {
+				border-bottom: none;
+			}
+			ul.tabs {
+				background: transparent;
+			}
+		} 
 	}
+	
 }

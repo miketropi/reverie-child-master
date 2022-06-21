@@ -939,6 +939,11 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
   height: 36px !important;
   padding: 0 !important;
 }
+@media (max-width: 767px) {
+  .single-product.woocommerce .type-product .woocommerce-tabs {
+    border-bottom: none;
+  }
+}
 .single-product.woocommerce .type-product .woocommerce-tabs ul.tabs {
   background: transparent;
 }
