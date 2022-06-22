@@ -39,6 +39,11 @@
   align-items: center;
   padding: 12px 0;
 }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-classic__inner .site-brand {
+    max-width: 120px;
+  }
+}
 .header-classic__inner .site-brand .__for-mobi {
   display: none;
 }
@@ -59,7 +64,6 @@
   }
 }
 .header-classic__inner .site-extra {
-  margin-left: 68px;
   margin-left: auto;
 }
 
@@ -76,6 +80,11 @@
 .header-tool__item:not(:last-child) {
   margin-right: 30px;
 }
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header-tool__item:not(:last-child) {
+    margin-right: 5px;
+  }
+}
 .header-tool__item > a {
   display: flex;
   align-items: center;
@@ -86,12 +95,30 @@
 .header-tool__item > a .__icon {
   margin-left: 10px;
 }
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header-tool__item > a .__icon {
+    margin-left: 5px;
+  }
+  .header-tool__item > a .__icon svg {
+    width: 20px;
+  }
+}
 .header-tool__item.__search .dgwt-wcas-search-icon {
   padding-top: 0;
   width: 37px;
 }
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header-tool__item.__search .dgwt-wcas-search-icon {
+    width: 20px;
+  }
+}
 .header-tool__item.__search .dgwt-wcas-search-icon svg {
   padding-top: 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header-tool__item.__search .dgwt-wcas-search-icon svg {
+    width: 20px;
+  }
 }
 .header-tool__item.__search .dgwt-wcas-search-form .dgwt-wcas-sf-wrapp {
   padding-top: 0;
@@ -143,10 +170,13 @@ body .css-wrapper-prod-cat {
     display: none;
   }
 }
+body .css-wrapper-prod-cat-inner {
+  overflow-x: scroll;
+}
 body .css-wrapper-prod-cat-inner .list-prod-cat {
   display: flex;
   justify-content: center;
-  overflow-x: auto;
+  width: 480px;
 }
 body .css-wrapper-prod-cat-inner .list-prod-cat .prod-cat-item {
   width: 64px;
@@ -260,6 +290,11 @@ ul.site-main-menu > li.menu-item > a {
   padding: 20px;
   display: flex;
   align-items: center;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  ul.site-main-menu > li.menu-item > a {
+    padding: 20px 5px;
+  }
 }
 ul.site-main-menu > li.menu-item > a .__arrow-nav-item {
   margin-left: 6px;

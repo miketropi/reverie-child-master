@@ -78,13 +78,22 @@ do_action('woocommerce_before_main_content');
 						'hide_empty' => false,
 					);
 
-					$product_categories = get_terms('product_cat', $cat_args);
+					//$product_categories = get_terms('product_cat', $cat_args);
+					$product_categories = get_field('prod_cat_mobile', 'option');
+
 
 					if (!empty($product_categories)) {
 					?>
 						<div class="e-product-cate-menu__inner">
 							<h4 class="hfp-widget__title">Categories</h4>
 							<ul class="p-term-list">
+								<?php $classes_all = 'all-products' == $term->slug ? 'active-item' : ''; ?>
+								<li class="p-term-list__item <?= $classes_all ?>">
+									<a href="/product-category/all-products/">
+										<span class="__icon-arrow"><?php echo hfp_icon('arrow_next'); ?></span>
+										All Products											
+									</a>
+								</li>
 								<?php if ($product_categories && count($product_categories) > 0) {
 									foreach ($product_categories as $key => $category) {
 										$classes = $category->slug == $term->slug ? 'active-item' : '';
