@@ -48,7 +48,7 @@ import Nav from './nav';
             $(this).text(newHeading);
         })
 
-
+        $('.wwp_wholesaler_registration_form input[type="checkbox"]').prop("checked", true).trigger("change");
 
         const labelCopyBilling = $('label[for="wwp_wholesaler_copy_billing_address"]');
         const newLabelCopyBilling = 'Uncheck this box if you like to enter a different shipping address.';

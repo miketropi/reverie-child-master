@@ -53,6 +53,7 @@ __webpack_require__.r(__webpack_exports__);
       var newHeading = txtHeading.substring(9, txtHeading.length);
       $(this).text(newHeading);
     });
+    $('.wwp_wholesaler_registration_form input[type="checkbox"]').prop("checked", true).trigger("change");
     var labelCopyBilling = $('label[for="wwp_wholesaler_copy_billing_address"]');
     var newLabelCopyBilling = 'Uncheck this box if you like to enter a different shipping address.';
     labelCopyBilling.text(newLabelCopyBilling);
