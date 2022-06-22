@@ -1,50 +1,73 @@
 import Nav from './nav';
 
 ((w, $) => {
-  'use strict';
+    'use strict';
 
-  const fixPriceWholesaleSingleProduct = () => {
-    let currentPrice = '';
-    $('.variations_form').on(
-			'found_variation',
-			(e, variation) => {
-				// console.log('---', variation, variation['price_html']);
-        currentPrice = variation['price_html'];
-			}
-		);
+    const fixPriceWholesaleSingleProduct = () => {
+        let currentPrice = '';
+        $('.variations_form').on(
+            'found_variation',
+            (e, variation) => {
+                // console.log('---', variation, variation['price_html']);
+                currentPrice = variation['price_html'];
+            }
+        );
 
-    $(document).ajaxComplete((event, xhr, settings) => {
-      // console.log([event, xhr, settings])
-      if(!settings.data.search) return;
-      if(settings.data.search('action=get_price_product_with_bulk_table') != -1) {
-        $('.woocommerce-variation .woocommerce-variation-price').html(currentPrice)
-      }
-    })
-  }
+        $(document).ajaxComplete((event, xhr, settings) => {
+            // console.log([event, xhr, settings])
+            if (!settings.data.search) return;
+            if (settings.data.search('action=get_price_product_with_bulk_table') != -1) {
+                $('.woocommerce-variation .woocommerce-variation-price').html(currentPrice)
+            }
+        })
+    }
 
-  const ready = () => {
-    Nav();
-    fixPriceWholesaleSingleProduct();
+    const spinButtonQuanlityProduct = () => {
+        $(document).on("click", ".input-spin-button.outer-spin-button", function () {
+            let $this = $(this);
+            let inputVal = $this.parent().find('input').val()
+            let newVal = parseInt(inputVal) + 1
+            $this.parent().find("input").val(newVal);
+        });
 
-    $(document).on("click", ".input-spin-button.outer-spin-button", function () {
-      let $this = $(this);
-      let inputVal = $this.parent().find('input').val()
-      let newVal = parseInt(inputVal) + 1
-      $this.parent().find("input").val(newVal);
-    });
+        $(document).on("click", ".input-spin-button.inner-spin-button", function () {
+            let $this = $(this);
+            let inputVal = $this.parent().find('input').val()
+            if (parseInt(inputVal) == 1) return
+            let newVal = parseInt(inputVal) - 1
 
-    $(document).on("click", ".input-spin-button.inner-spin-button", function () {
-      let $this = $(this);
-      let inputVal = $this.parent().find('input').val()
-      if(parseInt(inputVal) == 1) return
-      let newVal = parseInt(inputVal) - 1
-      
-      $this.parent().find("input").val(newVal);
-    });
-  }
+            $this.parent().find("input").val(newVal);
+        });
+    }
 
-  /**
-   * DOM Ready
-   */
-  $(ready);
+    const replaceRegisterFormWholeSaler = () => {
+        
+        $('.wwp_wholesaler_registration_form h2').each(function(){
+            let txtHeading = $(this).text();
+            let newHeading = txtHeading.substring(9, txtHeading.length);
+            $(this).text(newHeading);
+        })
+
+
+
+        const labelCopyBilling = $('label[for="wwp_wholesaler_copy_billing_address"]');
+        const newLabelCopyBilling = 'Uncheck this box if you like to enter a different shipping address.';
+        labelCopyBilling.text(newLabelCopyBilling);
+        const wrapperCheckbox = labelCopyBilling.parent();
+        const inputCheckbox = labelCopyBilling.parent().find('input');
+        wrapperCheckbox.addClass('wrap-checkbox-billing')
+        inputCheckbox.insertBefore(labelCopyBilling);
+    }
+
+    const ready = () => {
+        Nav();
+        fixPriceWholesaleSingleProduct();
+        spinButtonQuanlityProduct();
+        replaceRegisterFormWholeSaler();
+    }
+
+    /**
+     * DOM Ready
+     */
+    $(ready);
 })(window, jQuery)

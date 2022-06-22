@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --site-width: 1288px;
   --main-menu-size: 14px;
@@ -975,4 +976,99 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
   display: inline-block;
   text-align: center;
   padding: 6px 10px;
+}
+
+.wholesaler-registration {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  color: #68767b;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 13px;
+  margin-bottom: 25px;
+}
+.wholesaler-registration::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 110%;
+  left: 0;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAckAAAAECAYAAADlPsSvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACBSURBVHgB7dXBDURQFIXhe2Nk2pnNLGY5JehABVpABRKNKEQk2hHh8gRhR2L18n/bc/a/ykHS1KnYmAkAAB5Q0VaD8G9DX5hYfOtrY/7aRgIJAPCJi17XD9Fb5FIgT985kOX3l6kbCSQAwCd79MKgmqP3ufVdA7lsBBIA4JOnAulM8o5amIqRN48AAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.wwp_wholesaler_registration_form input[name=wwp_register] {
+  background-color: #019490;
+  border-color: #019490;
+}
+.wwp_wholesaler_registration_form h2 {
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+  color: #68767b;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 13px;
+  margin-bottom: 25px;
+}
+.wwp_wholesaler_registration_form h2::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 110%;
+  left: 0;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAckAAAAECAYAAADlPsSvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACBSURBVHgB7dXBDURQFIXhe2Nk2pnNLGY5JehABVpABRKNKEQk2hHh8gRhR2L18n/bc/a/ykHS1KnYmAkAAB5Q0VaD8G9DX5hYfOtrY/7aRgIJAPCJi17XD9Fb5FIgT985kOX3l6kbCSQAwCd79MKgmqP3ufVdA7lsBBIA4JOnAulM8o5amIqRN48AAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+.wwp_wholesaler_registration_form input[type=checkbox] + label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+}
+.wwp_wholesaler_registration_form input[type=checkbox] {
+  display: none;
+}
+.wwp_wholesaler_registration_form input[type=checkbox] + label:before {
+  content: "✔";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding-left: 5px;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  background-color: #019490;
+  border-color: #019490;
+  transition: 0.2s;
+}
+.wwp_wholesaler_registration_form input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+.wwp_wholesaler_registration_form input[type=checkbox]:checked + label:before {
+  background-color: #019490;
+  border-color: #019490;
+  color: #fff;
+}
+.wwp_wholesaler_registration_form input[type=checkbox]:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+.wwp_wholesaler_registration_form input[type=checkbox]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
 }

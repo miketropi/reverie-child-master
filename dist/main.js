@@ -31,9 +31,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   };
 
-  var ready = function ready() {
-    (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])();
-    fixPriceWholesaleSingleProduct();
+  var spinButtonQuanlityProduct = function spinButtonQuanlityProduct() {
     $(document).on("click", ".input-spin-button.outer-spin-button", function () {
       var $this = $(this);
       var inputVal = $this.parent().find('input').val();
@@ -47,6 +45,28 @@ __webpack_require__.r(__webpack_exports__);
       var newVal = parseInt(inputVal) - 1;
       $this.parent().find("input").val(newVal);
     });
+  };
+
+  var replaceRegisterFormWholeSaler = function replaceRegisterFormWholeSaler() {
+    $('.wwp_wholesaler_registration_form h2').each(function () {
+      var txtHeading = $(this).text();
+      var newHeading = txtHeading.substring(9, txtHeading.length);
+      $(this).text(newHeading);
+    });
+    var labelCopyBilling = $('label[for="wwp_wholesaler_copy_billing_address"]');
+    var newLabelCopyBilling = 'Uncheck this box if you like to enter a different shipping address.';
+    labelCopyBilling.text(newLabelCopyBilling);
+    var wrapperCheckbox = labelCopyBilling.parent();
+    var inputCheckbox = labelCopyBilling.parent().find('input');
+    wrapperCheckbox.addClass('wrap-checkbox-billing');
+    inputCheckbox.insertBefore(labelCopyBilling);
+  };
+
+  var ready = function ready() {
+    (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    fixPriceWholesaleSingleProduct();
+    spinButtonQuanlityProduct();
+    replaceRegisterFormWholeSaler();
   };
   /**
    * DOM Ready
