@@ -452,6 +452,7 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
 }
 .tax-product_cat #main {
   padding: 0 10px 70px 10px;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
