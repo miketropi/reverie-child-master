@@ -5,7 +5,7 @@
 .single-product.woocommerce {
 	background-color: #e5e5e5;
 	overflow-x: hidden;
-	.cta-section{
+	.cta-section {
 		width: 100vw;
 		margin-left: calc((100% - 100vw) / 2);
 		clear: both;
@@ -452,14 +452,36 @@
 				}
 			}
 		}
-		.woocommerce-tabs{
+		.woocommerce-tabs {
 			@media (max-width: 767px) {
 				border-bottom: none;
 			}
 			ul.tabs {
 				background: transparent;
 			}
-		} 
+		}
 	}
-	
+}
+
+.register-trade-account {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	h5 {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 30px;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.btn-register-trade {
+		background-color: #019490;
+		color: #fff;
+		font-size: 16px;
+		width: 145px;
+		display: inline-block;
+		text-align: center;
+		padding: 6px 10px;
+	}
 }

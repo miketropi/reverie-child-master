@@ -953,3 +953,26 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
 .single-product.woocommerce .type-product .woocommerce-tabs ul.tabs {
   background: transparent;
 }
+
+.register-trade-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.register-trade-account h5 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.register-trade-account .btn-register-trade {
+  background-color: #019490;
+  color: #fff;
+  font-size: 16px;
+  width: 145px;
+  display: inline-block;
+  text-align: center;
+  padding: 6px 10px;
+}
