@@ -184,10 +184,10 @@
 				}
 			}
 			.single_variation_wrap {
-				clear: both;
+				clear: initial;
 				display: flex;
 				flex-direction: column;
-
+				margin-top: 60px;
 				@media (max-width: 767px) {
 					display: flex;
 					justify-content: center;
@@ -202,17 +202,21 @@
 					order: 1;
 					.woocommerce-variation-price {
 						.price {
-							margin-bottom: 0;
 							font-style: normal;
 							font-weight: 700;
-							line-height: 1.2;
-							padding-top: 0 !important;
-							font-size: 45px;
+							font-size: 75px;
+							line-height: 69px;
 							letter-spacing: -0.02em;
 							text-transform: uppercase;
 							color: #019490;
 							font-family: var(--heading-font);
-							margin-bottom: 10px;
+							margin-bottom:35px;
+							@media (max-width: 767px) {
+								font-size: 43px;
+								line-height: 41px;
+								text-align: center;
+								margin-bottom: 30px;
+							}
 						}
 					}
 				}
@@ -258,7 +262,7 @@
 			.wdp_bulk_table_content {
 				float: right;
 				width: auto;
-				margin-top: -90px;
+				margin-top: 0;
 				@media (max-width: 991px) {
 					margin-top: 0;
 					float: none;
@@ -329,6 +333,8 @@
 				}
 			}
 			.wrapper-variations {
+				display: flex;
+				align-items: flex-start;
 				@media (max-width: 767px) {
 					display: flex;
 					justify-content: center;
@@ -486,28 +492,28 @@
 	}
 }
 .wholesaler-registration {
-		font-style: normal;
-		font-weight: 500;
-		font-size: 32px;
-		line-height: 38px;
-		color: #68767b;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 38px;
+	color: #68767b;
+	display: inline-block;
+	position: relative;
+	padding-bottom: 13px;
+	margin-bottom: 25px;
+	&::before {
+		content: "";
 		display: inline-block;
-		position: relative;
-		padding-bottom: 13px;
-		margin-bottom: 25px;
-		&::before {
-			content: "";
-			display: inline-block;
-			position: absolute;
-			bottom: 0;
-			height: 4px;
-			width: 110%;
-			left: 0;
-			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAckAAAAECAYAAADlPsSvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACBSURBVHgB7dXBDURQFIXhe2Nk2pnNLGY5JehABVpABRKNKEQk2hHh8gRhR2L18n/bc/a/ykHS1KnYmAkAAB5Q0VaD8G9DX5hYfOtrY/7aRgIJAPCJi17XD9Fb5FIgT985kOX3l6kbCSQAwCd79MKgmqP3ufVdA7lsBBIA4JOnAulM8o5amIqRN48AAAAASUVORK5CYII=);
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: 100% 100%;
-		}
+		position: absolute;
+		bottom: 0;
+		height: 4px;
+		width: 110%;
+		left: 0;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAckAAAAECAYAAADlPsSvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACBSURBVHgB7dXBDURQFIXhe2Nk2pnNLGY5JehABVpABRKNKEQk2hHh8gRhR2L18n/bc/a/ykHS1KnYmAkAAB5Q0VaD8G9DX5hYfOtrY/7aRgIJAPCJi17XD9Fb5FIgT985kOX3l6kbCSQAwCd79MKgmqP3ufVdA7lsBBIA4JOnAulM8o5amIqRN48AAAAASUVORK5CYII=);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100% 100%;
+	}
 }
 .wwp_wholesaler_registration_form {
 	input[name="wwp_register"] {
@@ -575,7 +581,6 @@
 		background-color: #019490;
 		border-color: #019490;
 		color: #fff;
-		
 	}
 
 	input[type="checkbox"]:disabled + label:before {

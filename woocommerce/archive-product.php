@@ -114,7 +114,7 @@ do_action('woocommerce_before_main_content');
 				</div>
 				<div class="csscols cols-md-9">
 					<?php
-					echo '<h2 class="title-cat-heading">' . $term->name . '</h2>';
+					echo '<h1 class="title-cat-heading">' . $term->name . '</h1>';
 					echo '<div class="e-products-grid woocommerce">';
 					echo '<div class="e-products-grid__inner">';
 					$args = array(

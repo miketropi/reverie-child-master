@@ -20,15 +20,14 @@ __webpack_require__.r(__webpack_exports__);
     $('.variations_form').on('found_variation', function (e, variation) {
       // console.log('---', variation, variation['price_html']);
       currentPrice = variation['price_html'];
-    });
-    $(document).ajaxComplete(function (event, xhr, settings) {
-      // console.log([event, xhr, settings])
-      if (!settings.data.search) return;
-
-      if (settings.data.search('action=get_price_product_with_bulk_table') != -1) {
-        $('.woocommerce-variation .woocommerce-variation-price').html(currentPrice);
-      }
-    });
+      console.log(variation['price_html']);
+    }); // $(document).ajaxComplete((event, xhr, settings) => {
+    //      console.log([event, xhr, settings]) 
+    //     // if (!settings.data.search) return; 
+    //     if (settings.data.search('action=get_price_product_with_bulk_table') != -1) {
+    //         $('.woocommerce-variation .woocommerce-variation-price').html(currentPrice)
+    //     }
+    // })
   };
 
   var spinButtonQuanlityProduct = function spinButtonQuanlityProduct() {
@@ -64,10 +63,13 @@ __webpack_require__.r(__webpack_exports__);
   };
 
   var ready = function ready() {
-    (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])();
-    fixPriceWholesaleSingleProduct();
+    (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])(); //fixPriceWholesaleSingleProduct();
+
     spinButtonQuanlityProduct();
     replaceRegisterFormWholeSaler();
+    $('form.variations_form').on('found_variation', function (e, variation) {
+      $('.single_variation_wrap .price').hide();
+    });
   };
   /**
    * DOM Ready
