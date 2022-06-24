@@ -62,13 +62,24 @@ __webpack_require__.r(__webpack_exports__);
     inputCheckbox.insertBefore(labelCopyBilling);
   };
 
+  var checkTableBulkDeal = function checkTableBulkDeal() {
+    if (!$('.wdp_bulk_table_content').children().length) {
+      $('.single_variation_wrap').addClass('hide-variation-price');
+    }
+  };
+
   var ready = function ready() {
     (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])(); //fixPriceWholesaleSingleProduct();
 
     spinButtonQuanlityProduct();
     replaceRegisterFormWholeSaler();
+    checkTableBulkDeal();
     $('form.variations_form').on('found_variation', function (e, variation) {
-      $('.single_variation_wrap .price').hide();
+      if ($('.wdp_bulk_table_content').children().length) {
+        $('.single_variation_wrap .price').hide();
+      } else {
+        $('.single_variation_wrap .woocommerce-variation-price').hide();
+      }
     });
   };
   /**

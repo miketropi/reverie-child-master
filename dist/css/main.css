@@ -735,6 +735,9 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
     margin-bottom: 80px;
   }
 }
+.single-product.woocommerce .type-product .entry-summary .single_variation_wrap.hide-variation-price .woocommerce-variation-price {
+  display: none !important;
+}
 .single-product.woocommerce .type-product .entry-summary .single_variation_wrap .woocommerce-variation.single_variation {
   order: 1;
 }

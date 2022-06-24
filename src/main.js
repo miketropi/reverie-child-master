@@ -60,14 +60,27 @@ import Nav from './nav';
         inputCheckbox.insertBefore(labelCopyBilling);
     }
 
+    const checkTableBulkDeal = () => {
+        if(!$('.wdp_bulk_table_content').children().length){
+            $('.single_variation_wrap').addClass('hide-variation-price');
+        }
+    }   
+
     const ready = () => {
         Nav();
         //fixPriceWholesaleSingleProduct();
         spinButtonQuanlityProduct();
         replaceRegisterFormWholeSaler();
-
+        checkTableBulkDeal();
         $('form.variations_form').on('found_variation', function (e, variation) {
-            $('.single_variation_wrap .price').hide();
+            if($('.wdp_bulk_table_content').children().length){
+                $('.single_variation_wrap .price').hide();
+                
+            }else{
+                $('.single_variation_wrap .woocommerce-variation-price').hide();
+               
+            }
+           
         });
     }
 

@@ -198,6 +198,12 @@
 					order: 2;
 					margin-bottom: 80px;
 				}
+				&.hide-variation-price{
+					.woocommerce-variation-price{
+						display: none !important;
+					}
+					
+				}
 				.woocommerce-variation.single_variation {
 					order: 1;
 					.woocommerce-variation-price {
