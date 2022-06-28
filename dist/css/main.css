@@ -177,6 +177,7 @@ body .css-wrapper-prod-cat-inner .list-prod-cat {
   display: flex;
   justify-content: center;
   width: 480px;
+  margin: 0 auto;
 }
 body .css-wrapper-prod-cat-inner .list-prod-cat .prod-cat-item {
   width: 64px;
