@@ -543,9 +543,6 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
     padding-right: 0;
   }
 }
-.single-product.woocommerce .type-product .woocommerce-product-gallery .woocommerce-product-gallery__image {
-  padding: 0 !important;
-}
 .single-product.woocommerce .type-product .entry-summary {
   margin-top: 0;
 }
