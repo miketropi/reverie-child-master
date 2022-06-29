@@ -60,6 +60,9 @@
 						flex: 0 0 70%;
 						max-width: 70%;
 					}
+					.e-products-grid{
+						margin-top: 60px;
+					}
 				}
 				.title-cat-heading {
 					font-style: normal;
@@ -73,7 +76,7 @@
 					position: relative;
 					padding-bottom: 13px;
 					margin-bottom: 80px;
-					margin-top: 70px;
+					margin-top: 15px;
 					&::before {
 						content: "";
 						display: inline-block;

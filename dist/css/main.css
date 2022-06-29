@@ -486,6 +486,9 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
     max-width: 70%;
   }
 }
+.wrapper-cat-product-inner .rows .csscols.cols-md-9 .e-products-grid {
+  margin-top: 60px;
+}
 .wrapper-cat-product-inner .rows .csscols .title-cat-heading {
   font-style: normal;
   font-weight: 500;
@@ -498,7 +501,7 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
   position: relative;
   padding-bottom: 13px;
   margin-bottom: 80px;
-  margin-top: 70px;
+  margin-top: 15px;
 }
 .wrapper-cat-product-inner .rows .csscols .title-cat-heading::before {
   content: "";
