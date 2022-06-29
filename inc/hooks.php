@@ -16,3 +16,13 @@ add_filter( 'dgwt/wcas/form/magnifier_ico', function ( $html, $class ) {
 	$html = ccs_icon('search');
 	return $html;
   }, 10, 2 );
+
+  add_filter( 'woocommerce_add_to_cart_fragments', 'rns_cart_count_fragments', 10, 1 );
+
+function rns_cart_count_fragments( $fragments ) {
+    
+    $fragments['span.num-order'] = '<span class="num-order">' . count(WC()->cart->get_cart()) . '</span>';
+    
+    return $fragments;
+    
+}

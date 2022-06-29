@@ -13,12 +13,12 @@
 
 	@media (max-width: 767px) {
 		background-color: #fff;
-		overflow: hidden;
+		overflow-x: hidden;
 	}
 	#main {
 		padding: 0 10px 70px 10px;
 		@media (max-width: 767px) {
-			overflow: hidden;
+			overflow-x: hidden;
 		}
 	}
 	.e-product-cate-menu__inner{
@@ -49,17 +49,17 @@
 				&.cols-md-3 {
 					@media (min-width: 768px) {
 						-webkit-box-flex: 0;
-						-ms-flex: 0 0 30%;
-						flex: 0 0 30%;
-						max-width: 30%;
+						-ms-flex: 0 0 25%;
+						flex: 0 0 25%;
+						max-width: 25%;
 					}
 				}
 				&.cols-md-9 {
 					@media (min-width: 768px) {
 						-webkit-box-flex: 0;
-						-ms-flex: 0 0 70%;
-						flex: 0 0 70%;
-						max-width: 70%;
+						-ms-flex: 0 0 75%;
+						flex: 0 0 75%;
+						max-width: 75%;
 					}
 					.e-products-grid{
 						margin-top: 60px;
