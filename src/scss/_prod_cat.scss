@@ -4,7 +4,6 @@
 
 .tax-product_cat {
 	background-color: #e5e5e5;
-	overflow-x: hidden;
 	@media (min-width: 1400px) {
 		.container .row,
 		#main {
@@ -14,14 +13,16 @@
 
 	@media (max-width: 767px) {
 		background-color: #fff;
-	}
-	.cta-section{
-		width: 100vw;
-		margin-left: calc((100% - 100vw) / 2);
+		overflow: hidden;
 	}
 	#main {
 		padding: 0 10px 70px 10px;
-		overflow: hidden;
+		@media (max-width: 767px) {
+			overflow: hidden;
+		}
+	}
+	.e-product-cate-menu__inner{
+		margin-top: 190px;
 	}
 }
 .wrapper-cat-product {

@@ -222,7 +222,6 @@ do_action('woocommerce_after_main_content');
  */
 do_action('woocommerce_sidebar');
 
-echo '<div class="cta-section">' . do_shortcode('[INSERT_ELEMENTOR id="28323"]') . '</div>';
 ?>
 
 <?php get_footer('shop'); ?>
