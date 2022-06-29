@@ -68,6 +68,21 @@ __webpack_require__.r(__webpack_exports__);
     }
   };
 
+  function equalHeight(item) {
+    $('.wrap-item').each(function () {
+      var tallest = 0;
+      var title = $(this).find(item);
+      title.each(function () {
+        var thisHeight = $(this).height();
+
+        if (thisHeight > tallest) {
+          tallest = thisHeight;
+        }
+      });
+      title.height(tallest);
+    });
+  }
+
   var ready = function ready() {
     (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])(); //fixPriceWholesaleSingleProduct();
 
@@ -81,6 +96,8 @@ __webpack_require__.r(__webpack_exports__);
         $('.single_variation_wrap .woocommerce-variation-price').hide();
       }
     });
+    equalHeight($(".woocommerce-loop-product__title"));
+    equalHeight($(".product-description"));
   };
   /**
    * DOM Ready

@@ -61,10 +61,25 @@ import Nav from './nav';
     }
 
     const checkTableBulkDeal = () => {
-        if(!$('.wdp_bulk_table_content').children().length){
+        if (!$('.wdp_bulk_table_content').children().length) {
             $('.single_variation_wrap').addClass('hide-variation-price');
         }
-    }   
+    }
+
+    function equalHeight(item) {
+        $('.wrap-item').each(function () {
+            let tallest = 0;
+            let title = $(this).find(item);
+            title.each(function () {
+                let thisHeight = $(this).height();
+                if (thisHeight > tallest) {
+                    tallest = thisHeight;
+                }
+            })
+            title.height(tallest);
+        });
+        
+    }
 
     const ready = () => {
         Nav();
@@ -73,15 +88,17 @@ import Nav from './nav';
         replaceRegisterFormWholeSaler();
         checkTableBulkDeal();
         $('form.variations_form').on('found_variation', function (e, variation) {
-            if($('.wdp_bulk_table_content').children().length){
+            if ($('.wdp_bulk_table_content').children().length) {
                 $('.single_variation_wrap .price').hide();
-                
-            }else{
+
+            } else {
                 $('.single_variation_wrap .woocommerce-variation-price').hide();
-               
+
             }
-           
+
         });
+        equalHeight($(".woocommerce-loop-product__title"));
+        equalHeight($(".product-description"));
     }
 
     /**
