@@ -26,3 +26,10 @@ function rns_cart_count_fragments( $fragments ) {
     return $fragments;
     
 }
+
+
+function wpa_filter_list_comments($args){
+  $args['reverse_top_level'] = false;
+  return $args;
+}
+add_filter( 'woocommerce_product_review_list_args', 'wpa_filter_list_comments' );
