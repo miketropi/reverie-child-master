@@ -61,7 +61,7 @@
         list-style: none;
 
         &:not(:last-child) {
-            margin-right: 30px;
+            margin-right: 5px;
             @media only screen and (min-width: 768px) and (max-width: 1024px)  {
                 margin-right: 5px;
             }

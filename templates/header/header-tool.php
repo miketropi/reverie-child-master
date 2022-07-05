@@ -5,11 +5,11 @@
  */
 
 $tools = apply_filters('site-header-tools', [
-    'help' => [
-        'title' => __('Help', 'ccs'),
-        'icon' => ccs_icon('help'),
-        'link' => '/contact-us/',
-    ],
+    // 'help' => [
+    //     'title' => __('Help', 'ccs'),
+    //     'icon' => ccs_icon('help'),
+    //     'link' => '/contact-us/',
+    // ],
     'search' => [
         'icon' => ccs_icon('search'),
         'link' => '[fibosearch layout="icon"]',
