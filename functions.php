@@ -1,11 +1,11 @@
 <?php
 /**
- * Functions 
+ * Functions
  */
 
 {
     /**
-     * Define 
+     * Define
      */
     define('CCS_THEME_VER', '1.0.0');
     define('CCS_THEME_URI', get_stylesheet_directory_uri());
@@ -35,7 +35,7 @@ function ccs_boot() {
         'flex-height'          => true,
         'flex-width'           => true,
         'header-text'          => ['Right Choice Coatings & Sealers', '...'],
-        'unlink-homepage-logo' => true, 
+        'unlink-homepage-logo' => true,
     );
 
     add_theme_support( 'custom-logo', $defaults );
@@ -226,7 +226,7 @@ function woocommerce_product_quote() {
     $area_cover_coat = get_post_meta($post_id, '_area_cover_coat', TRUE);
 
     if ($area_cover == "" && $area_cover_coat == "") {
-        
+
     } else {
         ?>
         <div class="quote-btn">
@@ -267,6 +267,19 @@ function wc_direct_link_to_product_tabs() {
                     $('.woocommerce-Tabs-panel').css('display', 'none');
                     $('#tab-coverage-rates').css('display', 'block');
                 });
+
+                $('.woocommerce-Tabs-panel--product-description a,.woocommerce-Tabs-panel--information-guide a').on('click',function(event){
+                    event.preventDefault();
+                    var href = $(this).attr('href');
+                    var target = $(this).attr('target');
+                    if(target == '_blank'){
+                      window.open(href);
+                    }else{
+                      window.location.href = href;
+                    }
+                    return false;
+                });
+
             });
         </script>
         <?php
@@ -308,7 +321,7 @@ function woocommerce_product_quote_caculator_content() {
     $area_cover = get_post_meta($post_id, '_area_cover', TRUE);
     $area_cover_coat = get_post_meta($post_id, '_area_cover_coat', TRUE);
     if ($area_cover == "" && $area_cover_coat == "") {
-        
+
     } else {
         ?>
         <div id="tab-attrib_desc_tab" style="padding-top: 24px !important;">
@@ -331,11 +344,11 @@ function woocommerce_product_quote_caculator_content() {
                         <label class="title">2nd Coat Required?</label>
                         <div>
                             <input type="radio" name="calculate_cost" id="calculate_cost" value="yes" class="input-text qty text" onchange="setProductCalulator();"/>
-                            <label>Yes</label>                                                    
+                            <label>Yes</label>
                         </div>
                         <div>
                             <input type="radio" name="calculate_cost" id="calculate_cost" value="no" class="input-text qty text" onchange="setProductCalulator();" checked/>
-                            <label>No</label>                                                    
+                            <label>No</label>
                         </div>
                         <?php
                     } else {
@@ -562,7 +575,7 @@ function bbloomer_view_product_button() {
 
 
 
-// Display Radio Buttons 
+// Display Radio Buttons
 add_action('woocommerce_review_order_before_payment', 'bbloomer_checkout_radio_choice');
 
 function bbloomer_checkout_radio_choice() {
@@ -596,7 +609,7 @@ function bbloomer_checkout_radio_choice() {
     echo '</div>';
 }
 
-// Part 2 
+// Part 2
 // Add Fee and Calculate Total
 add_action('woocommerce_cart_calculate_fees', 'bbloomer_checkout_radio_choice_fee', 20, 1);
 
@@ -609,8 +622,8 @@ function bbloomer_checkout_radio_choice_fee($cart) {
     }
 }
 
-// Part 3 
-// Add Radio Choice to Session 
+// Part 3
+// Add Radio Choice to Session
 add_action('woocommerce_checkout_update_order_review', 'bbloomer_checkout_radio_choice_set_session');
 
 function bbloomer_checkout_radio_choice_set_session($posted_data) {
@@ -940,7 +953,7 @@ function testimonialslistingfull_func() {
                                 <?php } ?>
                             </span>
                         </div>
-                    <?php } ?>	
+                    <?php } ?>
                 </div><!-- .review-meta -->
 
                 <?php if (!empty($testimonial->post_content)) { ?>
@@ -1040,7 +1053,7 @@ function wb_woo_featured() {
                 <?php } else { ?>
                     <span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span><?php echo $product->get_regular_price(); ?></span></span></a>
             <?php } ?>
-            <a href="<?php the_permalink(); ?>" class="button addtocartbutton">View Product</a>   
+            <a href="<?php the_permalink(); ?>" class="button addtocartbutton">View Product</a>
             </li>
             <?php
         endwhile;

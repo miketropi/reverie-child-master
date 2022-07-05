@@ -71,9 +71,46 @@ do_action('woocommerce_before_main_content');
 		<div class="wrapper-cat-product-inner">
 			<div class="rows">
 				<div class="csscols cols-md-3">
-					<div class="e-product-cate-menu__inner">
-						<?php echo do_shortcode('[elementor-template id="29586"]'); ?>
-					</div>
+					<?php
+					$cat_args = array(
+						'orderby'    => 'name',
+						'order'      => 'asc',
+						'hide_empty' => false,
+					);
+
+					//$product_categories = get_terms('product_cat', $cat_args);
+					$product_categories_menu = get_field('prod_cat_mobile', 'option');
+
+
+					if (!empty($product_categories_menu)) {
+					?>
+						<div class="e-product-cate-menu__inner">
+							<h4 class="hfp-widget__title">Categories</h4>
+							<ul class="p-term-list">
+								<?php $classes_all = 'all-products' == $term->slug ? 'active-item' : ''; ?>
+								<?php if ($product_categories_menu && count($product_categories_menu) > 0) {
+									foreach ($product_categories_menu as $key => $category) {
+										$classes = $category->slug == $term->slug ? 'active-item' : '';
+								?>
+										<li class="p-term-list__item <?= $classes ?>">
+											<a href="<?php echo  get_term_link($category) ?>">
+												<span class="__icon-arrow"><?php echo hfp_icon('arrow_next'); ?></span>
+												<?php echo $category->name ?>
+											</a>
+										</li>
+								<?php }
+								} ?>
+								<li class="p-term-list__item <?= $classes_all ?>">
+									<a href="/product-category/all-products/">
+										<span class="__icon-arrow"><?php echo hfp_icon('arrow_next'); ?></span>
+										All Products
+									</a>
+								</li>
+							</ul>
+						</div>
+					<?php
+					}
+					?>
 				</div>
 				<div class="csscols cols-md-9">
 					<?php

@@ -1,8 +1,8 @@
 	</div><!-- Row End -->
 	</div><!-- Container End -->
 <?php
-	if ( is_product_category() || is_product() ) { 
-		echo '<div class="cta-section">' . do_shortcode('[INSERT_ELEMENTOR id="28323"]') . '</div>';
+	if ( is_product_category() || is_product() ) {
+		//echo '<div class="cta-section">' . do_shortcode('[INSERT_ELEMENTOR id="29037"]') . '</div>';
 	}
 ?>
 	<!--

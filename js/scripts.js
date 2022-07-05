@@ -85,7 +85,8 @@ jQuery(document).ready(function($) {
 				type: 'GET',
 				url: "https://my.airroad.com.au/api/v2/quote",
 				data: {
-					"fromcode": "4129",
+					"fromcode": 4129,
+					"locid": 4272,
 					"tocode":postcode,
 					"wgt":weight,
 					"fromsub":"loganholme",
@@ -106,7 +107,9 @@ jQuery(document).ready(function($) {
 						}
 
 						price = resultTwo['amount'] + resultTwo['fuelLevy'] + resultTwo['gst'] + surcharge;
-
+						let percentage_price = (5 / 100) * price;
+						price = price + percentage_price;
+						price = parseFloat(price);
 						if (price < 25) {
 							price = 27.50;
 						}

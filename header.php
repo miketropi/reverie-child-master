@@ -43,9 +43,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <?php
 	if ( is_product_category() ) {
-		echo do_shortcode('[INSERT_ELEMENTOR id="28318"]');
+		echo do_shortcode('[INSERT_ELEMENTOR id="29059"]');
 	}else if( is_product() ) {
-		echo do_shortcode('[INSERT_ELEMENTOR id="28334"]');
+		echo do_shortcode('[INSERT_ELEMENTOR id="29076"]');
 	}
 ?>
 

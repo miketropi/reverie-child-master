@@ -15,6 +15,7 @@
  * @package WooCommerce\Templates
  * @version 4.0.0
  */
+global $product;
 
 defined('ABSPATH') || exit;
 
@@ -29,7 +30,11 @@ if ($max_value && $min_value === $max_value) {
 	/* translators: %s: Quantity. */
 	$label = !empty($args['product_name']) ? sprintf(esc_html__('%s quantity', 'woocommerce'), wp_strip_all_tags($args['product_name'])) : esc_html__('Quantity', 'woocommerce');
 ?>
-<div class="wrapper-variations">
+<?php
+if (is_product() && $product->get_type() == 'variable') {
+	 echo '<div class="wrapper-variations">';
+}
+ ?>
 	<div class="quantity">
 		<?php do_action('woocommerce_before_quantity_input_field'); ?>
 		<label class="screen-reader-text" for="<?php echo esc_attr($input_id); ?>"><?php echo esc_attr($label); ?></label>
@@ -41,5 +46,8 @@ if ($max_value && $min_value === $max_value) {
 		</div>
 		<?php do_action('woocommerce_after_quantity_input_field'); ?>
 	</div>
+	<?php if(is_product() && $product->get_type() == 'simple'): ?>
+		<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) );?>"><?php echo $product->get_price_html(); ?></p>
+	<?php endif; ?>
 <?php
 }
