@@ -68,7 +68,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   };
 
-  function equalHeight(item) {
+  var equalHeight = function equalHeight(item) {
     $('.wrap-item').each(function () {
       var tallest = 0;
       var title = $(this).find(item);
@@ -81,7 +81,7 @@ __webpack_require__.r(__webpack_exports__);
       });
       title.height(tallest);
     });
-  }
+  };
 
   var ready = function ready() {
     (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])(); //fixPriceWholesaleSingleProduct();

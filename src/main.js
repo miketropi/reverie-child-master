@@ -66,7 +66,7 @@ import Nav from './nav';
         }
     }
 
-    function equalHeight(item) {
+    const equalHeight = (item) => {
         $('.wrap-item').each(function () {
             let tallest = 0;
             let title = $(this).find(item);
@@ -78,8 +78,9 @@ import Nav from './nav';
             })
             title.height(tallest);
         });
-        
     }
+
+
 
     const ready = () => {
         Nav();
@@ -99,6 +100,7 @@ import Nav from './nav';
         });
         equalHeight($(".woocommerce-loop-product__title"));
         equalHeight($(".product-description"));
+
     }
 
     /**
