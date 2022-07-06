@@ -115,7 +115,7 @@ do_action('woocommerce_before_main_content');
 									$product_thumbnail = wp_get_attachment_image_src($post_thumbnail_id, $size = 'shop-feature');
 									$product_thumbnail_alt = get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true);
 									$average = $product->get_average_rating();
-
+								
 									$p_image = (($product_thumbnail && isset($product_thumbnail[0])) ? $product_thumbnail[0] : wc_placeholder_img_src());
 								?>
 									<div class="e-products-grid__item">
@@ -139,9 +139,11 @@ do_action('woocommerce_before_main_content');
 											$variation_product_id = $product_variations[0]['variation_id'];
 											$variation_product = new WC_Product_Variation($variation_product_id);
 										?>
-											<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span><?php echo $variation_product->regular_price; ?></span></span></a>
+											<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span><?php echo wc_price($variation_product->regular_price); ?></span></span></a>
+											
 										<?php } else { ?>
-											<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span><?php echo $product->get_regular_price(); ?></span></span></a>
+											<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span><?php echo wc_price($product->get_regular_price()); ?></span></span></a>
+											
 										<?php } ?>
 										<a href="<?php echo get_permalink($id); ?>" class="btn-product-detail">View Product</a>
 									</div>
