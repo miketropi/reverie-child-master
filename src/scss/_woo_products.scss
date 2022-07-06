@@ -193,11 +193,10 @@
 					order: 2;
 					margin-bottom: 80px;
 				}
-				&.hide-variation-price{
-					.woocommerce-variation-price{
+				&.hide-variation-price {
+					.woocommerce-variation-price {
 						display: none !important;
 					}
-					
 				}
 				.woocommerce-variation.single_variation {
 					order: 1;
@@ -211,7 +210,7 @@
 							text-transform: uppercase;
 							color: #019490;
 							font-family: var(--heading-font);
-							margin-bottom:35px;
+							margin-bottom: 35px;
 							@media (max-width: 767px) {
 								font-size: 43px;
 								line-height: 41px;
@@ -591,5 +590,21 @@
 		transform: scale(1);
 		background-color: #bfb;
 		border-color: #bfb;
+	}
+}
+
+.is-user-whosaler {
+	.entry-summary {
+		> .wwp-wholesale-pricing-details {
+			display: none;
+		}
+		.single_variation_wrap.hide-variation-price{
+			>.price{
+				display: none;
+			}
+			.wwp-wholesale-pricing-details{
+				margin-bottom: 30px;
+			}
+		}
 	}
 }

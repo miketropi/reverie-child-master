@@ -1136,3 +1136,13 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
   background-color: #bfb;
   border-color: #bfb;
 }
+
+.is-user-whosaler .entry-summary > .wwp-wholesale-pricing-details {
+  display: none;
+}
+.is-user-whosaler .entry-summary .single_variation_wrap.hide-variation-price > .price {
+  display: none;
+}
+.is-user-whosaler .entry-summary .single_variation_wrap.hide-variation-price .wwp-wholesale-pricing-details {
+  margin-bottom: 30px;
+}

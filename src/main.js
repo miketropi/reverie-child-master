@@ -101,10 +101,12 @@ import Nav from './nav';
         equalHeight($(".woocommerce-loop-product__title"));
         equalHeight($(".product-description"));
 
+        
     }
 
     /**
      * DOM Ready
      */
     $(ready);
+
 })(window, jQuery)
