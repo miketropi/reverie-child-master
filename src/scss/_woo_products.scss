@@ -600,7 +600,7 @@
 		}
 		.single_variation_wrap {
 			> .price {
-				display: none;
+				//display: none;
 			}
 			
 		}
@@ -650,6 +650,6 @@
 	}
 }
 
-.is-user-whosaler.single-product.woocommerce .type-product .entry-summary .single_variation_wrap .woocommerce-variation-price{
+.has-wholesale.single-product.woocommerce .type-product .entry-summary .single_variation_wrap .woocommerce-variation-price{
 	display: none !important;
 }

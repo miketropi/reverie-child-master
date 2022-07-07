@@ -1140,9 +1140,6 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
 .is-user-whosaler .entry-summary > .wwp-wholesale-pricing-details {
   display: none;
 }
-.is-user-whosaler .entry-summary .single_variation_wrap > .price {
-  display: none;
-}
 .is-user-whosaler .wwp-wholesale-pricing-details {
   margin-bottom: 30px;
 }
@@ -1181,6 +1178,6 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
   padding-right: 10px;
 }
 
-.is-user-whosaler.single-product.woocommerce .type-product .entry-summary .single_variation_wrap .woocommerce-variation-price {
+.has-wholesale.single-product.woocommerce .type-product .entry-summary .single_variation_wrap .woocommerce-variation-price {
   display: none !important;
 }

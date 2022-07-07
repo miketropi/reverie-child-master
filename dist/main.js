@@ -16,7 +16,8 @@ __webpack_require__.r(__webpack_exports__);
   'use strict';
 
   var fixPriceWholesaleSingleProduct = function fixPriceWholesaleSingleProduct() {
-    if (!$('body').hasClass('is-user-whosaler')) return;
+    if (!$('.wwp-wholesale-pricing-details').length) return;
+    $('body').addClass('has-wholesale');
     var $price_df = $('.wwp-wholesale-pricing-details p:nth-child(2)').html();
     $('.wwp-wholesale-pricing-details').data('price-df', $price_df);
     $('.variations_form').on('found_variation', function (e, variation) {
@@ -100,7 +101,7 @@ __webpack_require__.r(__webpack_exports__);
     replaceRegisterFormWholeSaler();
     checkTableBulkDeal();
     $('form.variations_form').on('found_variation', function (e, variation) {
-      if ($('body').hasClass('is-user-whosaler')) return;
+      if ($('.wwp-wholesale-pricing-details').length) return;
 
       if ($('.wdp_bulk_table_content').children().length) {
         $('.single_variation_wrap .price').hide();

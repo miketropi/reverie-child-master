@@ -4,9 +4,13 @@ import Nav from './nav';
     'use strict';
 
     const fixPriceWholesaleSingleProduct = () => {
-        if (!$('body').hasClass('is-user-whosaler')) return;
+        if (!$('.wwp-wholesale-pricing-details').length) return;
+
+        $('body').addClass('has-wholesale');
+
         let $price_df = $('.wwp-wholesale-pricing-details p:nth-child(2)').html();
         $('.wwp-wholesale-pricing-details').data('price-df', $price_df);
+
         $('.variations_form').on(
             'found_variation',
             (e, variation) => {
@@ -99,7 +103,7 @@ import Nav from './nav';
         replaceRegisterFormWholeSaler();
         checkTableBulkDeal();
         $('form.variations_form').on('found_variation', function (e, variation) {
-            if ($('body').hasClass('is-user-whosaler')) return;
+            if ($('.wwp-wholesale-pricing-details').length) return;
             if ($('.wdp_bulk_table_content').children().length) {
                 $('.single_variation_wrap .price').hide();
 
@@ -110,6 +114,7 @@ import Nav from './nav';
         });
         equalHeight($(".woocommerce-loop-product__title"));
         equalHeight($(".product-description"));
+        
     }
 
     /**
