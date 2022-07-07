@@ -1140,9 +1140,47 @@ ul.site-main-menu ul.sub-menu li.menu-item.current-menu-item > a, ul.site-main-m
 .is-user-whosaler .entry-summary > .wwp-wholesale-pricing-details {
   display: none;
 }
-.is-user-whosaler .entry-summary .single_variation_wrap.hide-variation-price > .price {
+.is-user-whosaler .entry-summary .single_variation_wrap > .price {
   display: none;
 }
-.is-user-whosaler .entry-summary .single_variation_wrap.hide-variation-price .wwp-wholesale-pricing-details {
+.is-user-whosaler .wwp-wholesale-pricing-details {
   margin-bottom: 30px;
+}
+.is-user-whosaler .wwp-wholesale-pricing-details p {
+  color: #019490;
+}
+.is-user-whosaler .wwp-wholesale-pricing-details p .retailer-text,
+.is-user-whosaler .wwp-wholesale-pricing-details p .price-text {
+  color: #019490;
+}
+.is-user-whosaler .wwp-wholesale-pricing-details p s {
+  color: #019490;
+}
+.is-user-whosaler .wwp-wholesale-pricing-details p.price-changed .price {
+  margin-bottom: 0 !important;
+}
+.is-user-whosaler .wwp-wholesale-pricing-details p.price-changed span.woocommerce-Price-amount.amount {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.is-user-whosaler .wwp-wholesale-pricing-details p b, .is-user-whosaler .wwp-wholesale-pricing-details p:nth-child(2) {
+  display: flex;
+  align-items: flex-end;
+  font-weight: bold;
+}
+.is-user-whosaler .wwp-wholesale-pricing-details p b span.woocommerce-Price-amount.amount, .is-user-whosaler .wwp-wholesale-pricing-details p:nth-child(2) span.woocommerce-Price-amount.amount {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 69px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #019490;
+  font-family: var(--heading-font);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.is-user-whosaler.single-product.woocommerce .type-product .entry-summary .single_variation_wrap .woocommerce-variation-price {
+  display: none !important;
 }

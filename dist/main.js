@@ -16,11 +16,21 @@ __webpack_require__.r(__webpack_exports__);
   'use strict';
 
   var fixPriceWholesaleSingleProduct = function fixPriceWholesaleSingleProduct() {
-    var currentPrice = '';
+    if (!$('body').hasClass('is-user-whosaler')) return;
+    var $price_df = $('.wwp-wholesale-pricing-details p:nth-child(2)').html();
+    $('.wwp-wholesale-pricing-details').data('price-df', $price_df);
     $('.variations_form').on('found_variation', function (e, variation) {
-      // console.log('---', variation, variation['price_html']);
-      currentPrice = variation['price_html'];
-      console.log(variation['price_html']);
+      $('.wwp-wholesale-pricing-details p:nth-child(2)').html(variation['price_html']);
+      $('.wwp-wholesale-pricing-details p:nth-child(2)').addClass('price-changed');
+    });
+    $(".variations_form").on("woocommerce_variation_select_change", function (variation) {
+      var pa_size = $('#pa_size').val();
+      var pa_colour = $('#pa_colour').val();
+
+      if (pa_size == '' || pa_colour == '') {
+        $('.wwp-wholesale-pricing-details p:nth-child(2)').html($('.wwp-wholesale-pricing-details').data('price-df'));
+        $('.wwp-wholesale-pricing-details p:nth-child(2)').removeClass('price-changed');
+      }
     }); // $(document).ajaxComplete((event, xhr, settings) => {
     //      console.log([event, xhr, settings]) 
     //     // if (!settings.data.search) return; 
@@ -84,12 +94,14 @@ __webpack_require__.r(__webpack_exports__);
   };
 
   var ready = function ready() {
-    (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])(); //fixPriceWholesaleSingleProduct();
-
+    (0,_nav__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    fixPriceWholesaleSingleProduct();
     spinButtonQuanlityProduct();
     replaceRegisterFormWholeSaler();
     checkTableBulkDeal();
     $('form.variations_form').on('found_variation', function (e, variation) {
+      if ($('body').hasClass('is-user-whosaler')) return;
+
       if ($('.wdp_bulk_table_content').children().length) {
         $('.single_variation_wrap .price').hide();
       } else {

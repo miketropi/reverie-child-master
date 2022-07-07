@@ -598,13 +598,58 @@
 		> .wwp-wholesale-pricing-details {
 			display: none;
 		}
-		.single_variation_wrap.hide-variation-price{
-			>.price{
+		.single_variation_wrap {
+			> .price {
 				display: none;
 			}
-			.wwp-wholesale-pricing-details{
-				margin-bottom: 30px;
+			
+		}
+	}
+	.wwp-wholesale-pricing-details {
+		margin-bottom: 30px;
+		p {
+			color: #019490;
+			.retailer-text,
+			.price-text {
+				color: #019490;
+			}
+			s {
+				color: #019490;
+			}
+			&.price-changed{
+				.price{
+					margin-bottom: 0 !important;
+				}
+				span {
+					&.woocommerce-Price-amount.amount {
+						padding-left: 0 !important;
+						padding-right: 0 !important;
+					}
+				}
+			}
+			b, &:nth-child(2) {
+				display: flex;
+				align-items: flex-end;
+				font-weight: bold;
+				span {
+					&.woocommerce-Price-amount.amount {
+						font-style: normal;
+						font-weight: 700;
+						font-size: 75px;
+						line-height: 69px;
+						letter-spacing: -0.02em;
+						text-transform: uppercase;
+						color: #019490;
+						font-family: var(--heading-font);
+						padding-left: 10px;
+						padding-right: 10px;
+					}
+				}
 			}
 		}
 	}
+}
+
+.is-user-whosaler.single-product.woocommerce .type-product .entry-summary .single_variation_wrap .woocommerce-variation-price{
+	display: none !important;
 }

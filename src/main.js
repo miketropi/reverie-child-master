@@ -4,15 +4,25 @@ import Nav from './nav';
     'use strict';
 
     const fixPriceWholesaleSingleProduct = () => {
-        let currentPrice = '';
+        if (!$('body').hasClass('is-user-whosaler')) return;
+        let $price_df = $('.wwp-wholesale-pricing-details p:nth-child(2)').html();
+        $('.wwp-wholesale-pricing-details').data('price-df', $price_df);
         $('.variations_form').on(
             'found_variation',
             (e, variation) => {
-                // console.log('---', variation, variation['price_html']);
-                currentPrice = variation['price_html'];
-                console.log(variation['price_html'])
+                $('.wwp-wholesale-pricing-details p:nth-child(2)').html(variation['price_html']);
+                $('.wwp-wholesale-pricing-details p:nth-child(2)').addClass('price-changed');
             }
         );
+
+        $(".variations_form").on("woocommerce_variation_select_change", function (variation) {
+            let pa_size = $('#pa_size').val()
+            let pa_colour = $('#pa_colour').val()
+            if (pa_size == '' || pa_colour == '') {
+                $('.wwp-wholesale-pricing-details p:nth-child(2)').html($('.wwp-wholesale-pricing-details').data('price-df'));
+                $('.wwp-wholesale-pricing-details p:nth-child(2)').removeClass('price-changed');
+            }
+        });
 
         // $(document).ajaxComplete((event, xhr, settings) => {
         //      console.log([event, xhr, settings]) 
@@ -84,29 +94,28 @@ import Nav from './nav';
 
     const ready = () => {
         Nav();
-        //fixPriceWholesaleSingleProduct();
+        fixPriceWholesaleSingleProduct();
         spinButtonQuanlityProduct();
         replaceRegisterFormWholeSaler();
         checkTableBulkDeal();
         $('form.variations_form').on('found_variation', function (e, variation) {
+            if ($('body').hasClass('is-user-whosaler')) return;
             if ($('.wdp_bulk_table_content').children().length) {
                 $('.single_variation_wrap .price').hide();
 
             } else {
                 $('.single_variation_wrap .woocommerce-variation-price').hide();
-
             }
 
         });
         equalHeight($(".woocommerce-loop-product__title"));
         equalHeight($(".product-description"));
-
-        
     }
 
     /**
      * DOM Ready
      */
     $(ready);
+    
 
 })(window, jQuery)
